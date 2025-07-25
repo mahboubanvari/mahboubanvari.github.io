@@ -65,6 +65,12 @@ main {
   text-align: center;
   font-size: 1.2rem;
   line-height: 1.6;
+  max-width: 800px;
+  margin: 60px auto; /* adds clear space above/below */
+  padding: 20px;
+  background: rgba(255,255,255,0.85); /* light background for readability */
+  box-sizing: border-box;
+  border-radius: 10px;
 }
 
 footer {
@@ -81,8 +87,8 @@ footer {
   text-align: center;
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
-  margin-top: 60px;
-  margin-bottom: 30px;
+  margin-top: 80px;
+  margin-bottom: 60px;
   color: #596446;
 }
 
@@ -246,3 +252,28 @@ main.fade-in-container {
 }
 
 
+
+
+/* Mobile fix for hero section */
+@media (max-width: 768px) {
+  .hero-split {
+    flex-direction: column; /* stack text above image */
+    height: auto; /* allow natural height */
+  }
+
+  .hero-text {
+    padding: 40px;
+    text-align: center;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto; /* no forced full-height */
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto; /* show full image, no cropping */
+    object-fit: contain; 
+  }
+}
