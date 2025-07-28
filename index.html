@@ -30,31 +30,49 @@
 
      
     
-<section id="portfolio" class="full-section fade-in-container">
+<section id="portfolio" class="portfolio-text full-section fade-in-container">
    <h1>Portfolio</h1>
-    
+   <br><br>
 
-  <h2 class="collection-title">Recent Works</h2>
-    <div class="portfolio-grid">
-      <img src="images/recent1.jpg" alt="Recent Work 1" onclick="openLightbox(this.src)">
-      <img src="images/recent2.jpg" alt="Recent Work 2" onclick="openLightbox(this.src)">
-      <!-- To add more, just copy this line and change the number -->
+    <!-- collection cards -->
+  <div class="portfolio-collections-grid">
+    <div class="collection-card" data-target="recent-modal">
+      <img src="images/recent1.jpg" alt="Recent Works Cover">
+      <div class="overlay"><h2>Recent Works</h2></div>
     </div>
+    <div class="collection-card" data-target="residential-modal">
+      <img src="images/residential1.jpg" alt="Residential Complex Cover">
+      <div class="overlay"><h2>Residential Complex</h2></div>
+    </div>
+  </div>
 
-    <h2 class="collection-title">Residential Complex</h2>
+  <!-- Recent Works modal -->
+  <div id="recent-modal" class="collection-modal">
+    <button class="close-modal">&times;</button>
     <div class="portfolio-grid">
-      <img src="images/residential1.jpg" alt="Residential Complex 1" onclick="openLightbox(this.src)">
-      <img src="images/residential2.jpg" alt="Residential Complex 2" onclick="openLightbox(this.src)">
-      <img src="images/residential3.jpg" alt="Residential Complex 3" onclick="openLightbox(this.src)">
-      <img src="images/residential4.jpg" alt="Residential Complex 4" onclick="openLightbox(this.src)">
-      <img src="images/residential5.jpg" alt="Residential Complex 5" onclick="openLightbox(this.src)">
-      <img src="images/residential6.jpg" alt="Residential Complex 6" onclick="openLightbox(this.src)">
-      <img src="images/residential7.jpg" alt="Residential Complex 7" onclick="openLightbox(this.src)">
-      <img src="images/residential8.jpg" alt="Residential Complex 8" onclick="openLightbox(this.src)">
-      <img src="images/residential9.jpg" alt="Residential Complex 9" onclick="openLightbox(this.src)">
-      <img src="images/residential10.jpg" alt="Residential Complex 10" onclick="openLightbox(this.src)">
-      <!-- To add more, just copy this line and change the number -->
-      </div>
+      <img src="images/recent1.jpg" alt="">
+      <img src="images/recent2.jpg" alt="">
+      <!-- copy your existing recentX images here -->
+    </div>
+  </div>
+
+  <!-- Residential Complex modal -->
+  <div id="residential-modal" class="collection-modal">
+    <button class="close-modal">&times;</button>
+    <div class="portfolio-grid">
+      <img src="images/residential1.jpg" alt="">
+      <img src="images/residential2.jpg" alt="">
+      <img src="images/residential3.jpg" alt="">
+      <img src="images/residential4.jpg" alt="">
+      <img src="images/residential5.jpg" alt="">
+      <img src="images/residential6.jpg" alt="">
+      <img src="images/residential7.jpg" alt="">
+      <img src="images/residential8.jpg" alt="">
+      <img src="images/residential9.jpg" alt="">
+      <img src="images/residential10.jpg" alt="">
+      <!-- copy your existing residentialX images here -->
+    </div>
+  </div>
 </section>
     
 
@@ -62,7 +80,7 @@
 <section id="about" class="about-text full-section fade-in-container">
     <h1>About</h1>
     <br><br>
-  
+    
     <p>My work focuses on the subtle poetry of ordinary life, capturing fleeting moments and quiet spaces that hold traces of memory, transition, and belonging. I explore the relationship between people and the spaces they inhabit, and how these spaces can carry identity, presence, and absence all at once.
 <br><br>
 Relocation and adaptation have deeply shaped my perspective. Moving from Iran to the United States two years ago, brought a new awareness of how environments define us—routines change, and spaces gradually become extensions of memory. Through this shift, I became aware of how new and unfamiliar places slowly gather their own sense of familiarity with time.
@@ -75,7 +93,7 @@ While my paintings are rooted in personal experience, I approach them openly, ho
 <section id="contact" class="contact-text full-section fade-in-container">
     <h1>Contact</h1>
     <br><br>
-    
+
     <p>I'd love to hear from you—whether it's about commissions, collaborations, exhibitions, or just to share your thoughts on my work.
 <br><br>
 
@@ -88,6 +106,42 @@ While my paintings are rooted in personal experience, I approach them openly, ho
   <footer>
     <p>© 2025 Mahboub Anvari</p>
   </footer>
+
+
+  <script>
+  // Open modals
+  document.querySelectorAll('.collection-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.getElementById(card.dataset.target).style.display = 'flex';
+    });
+  });
+  // Close modals
+  document.querySelectorAll('.close-modal').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.collection-modal').style.display = 'none';
+    });
+  });
+  // open image in lightbox
+document.querySelectorAll('.collection-modal .portfolio-grid img').forEach(img => {
+  img.addEventListener('click', e => {
+    e.stopPropagation();              // prevent modal click–close
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-overlay').style.display = 'flex';
+  });
+});
+// close handler for the close button
+function closeLightbox() {
+  document.getElementById('lightbox-overlay').style.display = 'none';
+}
+
+</script>
+
+
+<!-- full-screen image lightbox -->
+<div id="lightbox-overlay" onclick="closeLightbox()">
+  <button class="lightbox-close">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
 
 </body>
 </html>
