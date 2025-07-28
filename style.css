@@ -245,12 +245,11 @@ main.fade-in-container {
   animation-delay: 0.3s;
 }
 
-/* Full‐screen snap container */
+/* Full‐screen snap container, but tall enough for overflow */
 .full-section {
-  height: 100vh;            /* fill the viewport vertically */
-  scroll-snap-align: start; /* snap the top of this element to the viewport top */
+  min-height: 100vh;        /* at least viewport height */
+  scroll-snap-align: start; /* snap to top */
 }
-
 
 
 
