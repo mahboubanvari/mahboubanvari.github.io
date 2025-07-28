@@ -46,9 +46,14 @@ main {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* allow more columns on wide screens, but keep a sensible minimum width */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+  width: 90%;            /* a bit wider so grid fills more of the screen */
+  margin: 30px auto 0;   /* center it and give top margin */
+  align-items: start;    /* top-align each grid cell, regardless of height */
 }
+
 
 .portfolio-grid img {
   width: 100%;
@@ -61,16 +66,24 @@ main {
   opacity: 0.8;
 }
 
-.about-text, .contact-text {
-  text-align: center;
+.portfolio-text {
+ text-align: center;
   font-size: 1.2rem;
+  color: #596446;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 60px auto; /* adds clear space above/below */
+   padding: 20px;
+}
+
+.about-text, .contact-text {
+ text-align: center;
+  font-size: 1.2rem;
+  color: #596446;
   line-height: 1.6;
   max-width: 800px;
   margin: 60px auto; /* adds clear space above/below */
   padding: 20px;
-  background: rgba(255,255,255,0.85); /* light background for readability */
-  box-sizing: border-box;
-  border-radius: 10px;
 }
 
 footer {
@@ -213,17 +226,6 @@ main {
 
 
 
-main {
-  animation-delay: 0.2s;
-}
-.about-text, .contact-text {
-  animation-delay: 0.4s;
-}
-.portfolio-grid {
-  animation-delay: 0.6s;
-}
-
-
 
 /* --- GLOBAL NAV LINK STYLE (works on all pages) --- */
 nav a {
@@ -276,3 +278,113 @@ main.fade-in-container {
     object-fit: contain; 
   }
 }
+
+
+
+/* — Collection‐cards grid on Portfolio */
+.portfolio-collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 20px;
+  width: 90%;
+  margin: 40px auto;
+}
+.collection-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.collection-card img {
+  width: 100%;
+  display: block;
+  transition: transform .3s ease;
+}
+.collection-card:hover img {
+  transform: scale(1.05);
+}
+.collection-card .overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-family: 'Playfair Display', serif;
+}
+
+/* — Modal overlay for each collection */
+.collection-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.9);
+  /* allow internal scrolling */
+  overflow-y: auto;
+  padding: 40px;
+  z-index: 1000;
+  /* stack content from the top */
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.collection-modal .close-modal {
+  position: absolute;
+  top: 20px; right: 30px;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+/* Masonry layout via CSS columns */
+.collection-modal .portfolio-grid {
+  display: block !important;       /* override the grid display */
+  column-width: 280px;             /* each column min-width */
+  column-gap: 20px;                /* gutter between columns */
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+  overflow-y: auto;                /* allow scrolling if too tall */
+}
+.collection-modal .portfolio-grid img {
+  display: inline-block;           /* flow images into columns */
+  width: 100%;
+  margin: 0 0 20px;                /* space below each image */
+  break-inside: avoid;             /* keep each image intact */
+}
+
+
+.collection-modal .portfolio-grid img {
+  width: 100%;
+  /* inline-block so images respect the column flow */
+  display: inline-block;
+  margin: 0 0 20px;
+}
+
+
+/* full-screen lightbox overlay */
+#lightbox-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+  cursor: pointer;
+}
+#lightbox-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+}
+#lightbox-overlay .lightbox-close {
+  position: absolute;
+  top: 20px; right: 30px;
+  color: #fff;
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
