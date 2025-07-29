@@ -6,31 +6,35 @@
   <title>Mahboub Anvari</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.31/fullpage.min.css" />
 </head>
 
 <body>
-  <header id="home" class="hero-split full-section fade-in-container">
-    <!-- Left side: Text + Menu -->
-    <div class="hero-text fade-in-container">
-  <h1>Mahboub Anvari</h1>
-
-  <nav>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</div>
-
-
-    <!-- Right side: Painting -->
-    <div class="hero-image">
-      <img src="images/hero.jpg" alt="Hero Painting">
-    </div>
+  <!-- Site-wide fixed nav -->
+  <header id="fixed-header">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
+
+<div id="fullpage">
+<section id="home" class="section hero-split fade-in-container" data-anchor="home">
+    <!-- Left side: Text + Menu -->
+  <div class="hero-text fade-in-container">
+    <h1>Mahboub Anvari</h1>
+  </div>
+    <!-- Right side: Painting -->
+  <div class="hero-image">
+    <img src="images/hero.jpg" alt="Hero Painting">
+  </div>
+</section>
 
      
     
-<section id="portfolio" class="portfolio-text full-section fade-in-container">
+<section id="portfolio" class="section portfolio-text fade-in-container" data-anchor="portfolio">
    <h1>Portfolio</h1>
    <br><br>
 
@@ -77,7 +81,7 @@
     
 
 
-<section id="about" class="about-text full-section fade-in-container">
+<section id="about" class="section about-text fade-in-container" data-anchor="about">
     <h1>About</h1>
     <br><br>
     
@@ -90,7 +94,7 @@ While my paintings are rooted in personal experience, I approach them openly, ho
 
 
 
-<section id="contact" class="contact-text full-section fade-in-container">
+<section id="contact" class="section contact-text fade-in-container" data-anchor="contact">
     <h1>Contact</h1>
     <br><br>
 
@@ -100,13 +104,31 @@ While my paintings are rooted in personal experience, I approach them openly, ho
     <p>Email: <a href="mailto:mahboub.anvari.m@gmail.com">mahboub.anvari.m@gmail.com</a></p>
     <p>Instagram: <a href="https://www.instagram.com/mahboub.anvari/" target="_blank">@mahboub.anvari</a></p>
 </section>
-
+</div>  <!-- end #fullpage -->
 
 
   <footer>
     <p>© 2025 Mahboub Anvari</p>
   </footer>
 
+
+ 
+   <!-- fullPage.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.31/fullpage.min.js">
+  </script>
+  
+  <!-- fullPage.js initialization -->  
+  <script>
+    new fullpage('#fullpage', {
+      anchors: ['home','portfolio','about','contact'],
+      menu: '#fixed-header nav',
+      fixedElements: '#fixed-header',
+      autoScrolling: true,
+      navigation: true,
+      scrollingSpeed: 900,
+      controlArrows: false
+    });
+  </script>
 
   <script>
   // Open modals
