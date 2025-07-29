@@ -1,8 +1,3 @@
-html {
-  scroll-behavior: smooth;       /* Smooth scrolling */
-  scroll-snap-type: y mandatory;  /* Enable vertical snap sessions */
-}
-
 
 /* Global site background matching homepage mood */
 body {
@@ -10,8 +5,63 @@ body {
   padding: 0;
   font-family: 'Lato', sans-serif;
   color: #cad47f; /* lemon green */
+  /* Base dark + semi-transparent lemon-green overlay */
+  background: 
+    linear-gradient(135deg, rgba(212, 209, 103, 0.25), rgba(156, 154, 82, 0.25)),
+    #1e1e1c; /* dark base color */
 
-  background: #cad47f; /* lemon green */
+  color: #cad47f; /* light text for contrast */
+}
+
+
+/* — Fixed header styling — */
+#fixed-header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  background: rgba(30,30,30,0.9);
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 15px 0;
+  text-align: center;
+}
+/* flex container inside header */
+#fixed-header .header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 60px;               /* match your previous header height */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* site title/logo style */
+.site-logo {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.site-logo a {
+  text-decoration: none;
+  color: inherit;
+}
+/* nav list — horizontal, spaced out */
+#fixed-header nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+#fixed-header nav li + li {
+  margin-left: 2rem;
+}
+#fixed-header nav a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #596446;
+}
+#fixed-header nav a:hover {
+  color: #cad47f;
 }
 
 
@@ -95,13 +145,6 @@ footer {
   color: #596446;
 }
 
-/* --- Split-screen hero layout --- */
-.hero-split {
-  display: flex;
-  height: 100vh; /* full screen height */
-  margin: 0;
-  padding: 0;
-}
 
 /* Left side with layered background (dark + transparent lemon green) */
 .hero-text {
@@ -134,19 +177,6 @@ footer {
 }
 
 
-/* Right side with painting */
-.hero-image {
-  flex: 1;
-  height: 100%;
-  overflow: hidden;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* fills the space nicely */
-  display: block;
-}
 
 /* Footer styling */
 footer {
@@ -228,38 +258,6 @@ nav a:hover {
 /* Subtle delay for content in main sections */
 main.fade-in-container {
   animation-delay: 0.3s;
-}
-
-/* Full‐screen snap container, but tall enough for overflow */
-.full-section {
-  min-height: 100vh;        /* at least viewport height */
-  scroll-snap-align: start; /* snap to top */
-}
-
-
-
-/* Mobile fix for hero section */
-@media (max-width: 768px) {
-  .hero-split {
-    flex-direction: column; /* stack text above image */
-    height: auto; /* allow natural height */
-  }
-
-  .hero-text {
-    padding: 40px;
-    text-align: center;
-  }
-
-  .hero-image {
-    width: 100%;
-    height: auto; /* no forced full-height */
-  }
-
-  .hero-image img {
-    width: 100%;
-    height: auto; /* show full image, no cropping */
-    object-fit: contain; 
-  }
 }
 
 
@@ -381,4 +379,11 @@ main.fade-in-container {
 }
 .collection-modal .portfolio-grid img:hover {
   opacity: 0.9; /* subtle hover, no reflow */
+}
+
+#home .hero-image { height: auto; }
+#home .hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
