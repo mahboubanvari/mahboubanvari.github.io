@@ -55,16 +55,6 @@ main {
 }
 
 
-.portfolio-grid img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: opacity 0.3s;
-}
-
-.portfolio-grid img:hover {
-  opacity: 0.8;
-}
 
 .portfolio-text {
  text-align: center;
@@ -82,7 +72,7 @@ main {
   color: #596446;
   line-height: 1.6;
   max-width: 800px;
-  margin: 60px auto; /* adds clear space above/below */
+  margin: 90px auto; /* adds clear space above/below */
   padding: 20px;
 }
 
@@ -216,14 +206,7 @@ main {
   display: block;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.portfolio-grid img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(212, 209, 103, 0.4); /* subtle lemon glow */
-}
-
 
 
 
@@ -340,12 +323,12 @@ main.fade-in-container {
 /* Masonry layout via CSS columns */
 .collection-modal .portfolio-grid {
   display: block !important;       /* override the grid display */
-  column-width: 280px;             /* each column min-width */
+  column-width: 200px;             /* each column min-width */
   column-gap: 20px;                /* gutter between columns */
   width: 100%;
   max-width: 1200px;
   margin-top: 20px;
-  overflow-y: auto;                /* allow scrolling if too tall */
+  /* no overflow here — modal handles scrolling */
 }
 .collection-modal .portfolio-grid img {
   display: inline-block;           /* flow images into columns */
@@ -354,13 +337,6 @@ main.fade-in-container {
   break-inside: avoid;             /* keep each image intact */
 }
 
-
-.collection-modal .portfolio-grid img {
-  width: 100%;
-  /* inline-block so images respect the column flow */
-  display: inline-block;
-  margin: 0 0 20px;
-}
 
 
 /* full-screen lightbox overlay */
@@ -388,3 +364,21 @@ main.fade-in-container {
   cursor: pointer;
 }
 
+
+@media (max-width: 600px) {
+  .collection-modal .portfolio-grid {
+    column-width: 140px;   /* even smaller columns on phones */
+    column-gap: 12px;
+  }
+}
+
+
+/* Prevent modal images from re-flowing or transforming */
+.collection-modal .portfolio-grid img {
+  transition: none !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+.collection-modal .portfolio-grid img:hover {
+  opacity: 0.9; /* subtle hover, no reflow */
+}
