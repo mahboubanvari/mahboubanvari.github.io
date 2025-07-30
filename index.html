@@ -1,105 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+ <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Mahboub Anvari</title>
    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.31/fullpage.min.css" />
-  </head>
-
+ </head>
  <body>
    <header id="fixed-header">
      <div class="header-inner">
        <h1 class="site-logo">
-        <a href="#home">Mahboub Anvari</a>
+         <a href="#home">Mahboub&nbsp;Anvari</a>
        </h1>
        <nav>
          <ul>
-          <li><a href="#home" data-menuanchor="home">Home</a></li>
-          <li><a href="#portfolio" data-menuanchor="portfolio">Portfolio</a></li>
-          <li><a href="#about" data-menuanchor="about">About</a></li>
-          <li><a href="#contact" data-menuanchor="contact">Contact</a></li>
+           <li><a href="#home" data-menuanchor="home">Home</a></li>
+           <li><a href="#portfolio" data-menuanchor="portfolio">Portfolio</a></li>
+           <li><a href="#about" data-menuanchor="about">About</a></li>
+           <li><a href="#contact" data-menuanchor="contact">Contact</a></li>
          </ul>
        </nav>
       </div>
    </header>
-     <div id="fullpage">
-       <section id="home" class="section home-text" data-anchor="home">
-         <div class="hero-image">
-           <img src="images/hero-horizontal.jpg" alt="Hero Painting">
-         </div>
-       </section>     
-       <section id="portfolio" class="section portfolio-text" data-anchor="portfolio">
-         <h1>Portfolio</h1>
-         <br><br>
-         <div class="portfolio-collections-grid">
-           <div class="collection-card" data-target="recent-modal">
-             <img src="images/recent1.jpg" alt="Recent Works Cover">
-             <div class="overlay"><h2>Recent Works</h2></div>
-           </div>
-           <div class="collection-card" data-target="residential-modal">
-             <img src="images/residential1.jpg" alt="Residential Complex Cover">
-             <div class="overlay"><h2>Residential Complex</h2></div>
-           </div>
-         </div>
-       </section>
-       <section id="about" class="section about-text" data-anchor="about">
-          <h1>About</h1>
-          <br><br>    
-         <p>My work focuses on the subtle poetry of ordinary life, capturing fleeting moments and quiet spaces that hold traces of memory, transition, and belonging. I explore the relationship between people and the spaces they inhabit, and how these spaces can carry identity, presence, and absence all at once.
-         <br><br>
-         Relocation and adaptation have deeply shaped my perspective. Moving from Iran to the United States two years ago, brought a new awareness of how environments define us—routines change, and spaces gradually become extensions of memory. Through this shift, I became aware of how new and unfamiliar places slowly gather their own sense of familiarity with time.
-         <br><br>
-         While my paintings are rooted in personal experience, I approach them openly, hoping that others might see or feel something of their own within the work.</p>
-       </section>
-       <section id="contact" class="section contact-text" data-anchor="contact">
-          <h1>Contact</h1>
-          <br><br>
-          <p>I'd love to hear from you—whether it's about commissions, collaborations, exhibitions, or just to share your thoughts on my work.
-         <br><br>
-          <p>Email: <a href="mailto:mahboub.anvari.m@gmail.com">mahboub.anvari.m@gmail.com</a></p>
-          <p>Instagram: <a href="https://www.instagram.com/mahboub.anvari/" target="_blank">@mahboub.anvari</a></p>
-       </section>
-     </div>
-
-
-     <!-- Recent Works modal -->
-     <div id="recent-modal" class="collection-modal">
-       <button class="close-modal">&times;</button>
-       <div class="portfolio-grid">
-         <img src="images/recent1.jpg" alt="">
-         <img src="images/recent2.jpg" alt="">
-         <!-- copy your existing recentX images here -->
+   <div id="fullpage">
+     <section id="section-home" class="section home-text" data-anchor="home">
+       <div class="hero-image">
+         <img src="images/hero-horizontal.jpg" alt="Hero Painting">
        </div>
-     </div>
-
-     <!-- Residential Complex modal -->
-     <div id="residential-modal" class="collection-modal">
-       <button class="close-modal">&times;</button>
-       <div class="portfolio-grid">
-         <img src="images/residential1.jpg" alt="">
-         <img src="images/residential2.jpg" alt="">
-         <img src="images/residential3.jpg" alt="">
-         <img src="images/residential4.jpg" alt="">
-         <img src="images/residential5.jpg" alt="">
-         <img src="images/residential6.jpg" alt="">
-         <img src="images/residential7.jpg" alt="">
-         <img src="images/residential8.jpg" alt="">
-         <img src="images/residential9.jpg" alt="">
-         <img src="images/residential10.jpg" alt="">
-         <!-- copy your existing residentialX images here -->
+     </section>
+     <section id="section-portfolio" class="section portfolio-text" data-anchor="portfolio">
+       <h2>Portfolio</h2>
+       <br />
+       <div class="portfolio-collections-grid">
+         <div class="collection-card" data-target="recent-modal">
+           <img src="images/recent1.jpg" alt="Recent Works Cover">
+           <div class="overlay"><h2>Recent Works</h2></div>
+         </div>
+         <div class="collection-card" data-target="residential-modal">
+           <img src="images/residential1.jpg" alt="Residential Complex Cover">
+           <div class="overlay"><h2>Residential Complex</h2></div>
+         </div>
        </div>
-     </div>  
-
-
+     </section>
+     <section id="section-about" class="section about-text" data-anchor="about">
+       <h2>About</h2>
+       <br />
+       <p>My work focuses on the subtle poetry of ordinary life, capturing fleeting moments and quiet spaces that hold traces of memory, transition, and belonging. I explore the relationship between people and the spaces they inhabit, and how these spaces can carry identity, presence, and absence all at once.<br />
+       Relocation and adaptation have deeply shaped my perspective. Moving from Iran to the United States two years ago, brought a new awareness of how environments define us—routines change, and spaces gradually become extensions of memory. Through this shift, I became aware of how new and unfamiliar places slowly gather their own sense of familiarity with time.<br />
+       While my paintings are rooted in personal experience, I approach them openly, hoping that others might see or feel something of their own within the work.</p>
+     </section>
+     <section id="section-contact" class="section contact-text" data-anchor="contact">
+       <h2>Contact</h2>
+       <br />
+       <p>I'd love to hear from you—whether it's about commissions, collaborations, exhibitions, or just to share your thoughts on my work.<p>
+       <p>Email: <a href="mailto:mahboub.anvari.m@gmail.com">mahboub.anvari.m@gmail.com</a></p>
+       <p>Instagram: <a href="https://www.instagram.com/mahboub.anvari/" target="_blank">@mahboub.anvari</a></p>
+     </section>
+   </div>
+   <div id="recent-modal" class="collection-modal" aria-modal="true" role="dialog">
+     <button class="close-modal">&times;</button>
+     <div class="portfolio-grid">
+       <img src="images/recent1.jpg" alt="recent work 1">
+       <img src="images/recent2.jpg" alt="recent work 2">
+     </div>
+   </div>
+   <div id="residential-modal" class="collection-modal" aria-modal="true" role="dialog">
+     <button class="close-modal">&times;</button>
+     <div class="portfolio-grid">
+       <img src="images/residential1.jpg" alt="residentioal complex 1">
+       <img src="images/residential2.jpg" alt="residentioal complex 2">
+       <img src="images/residential3.jpg" alt="residentioal complex 3">
+       <img src="images/residential4.jpg" alt="residentioal complex 4">
+       <img src="images/residential5.jpg" alt="residentioal complex 5">
+       <img src="images/residential6.jpg" alt="residentioal complex 6">
+       <img src="images/residential7.jpg" alt="residentioal complex 7">
+       <img src="images/residential8.jpg" alt="residentioal complex 8">
+       <img src="images/residential9.jpg" alt="residentioal complex 9">
+       <img src="images/residential10.jpg" alt="residentioal complex 10">
+     </div>
+   </div>  
    <footer>
-    <p>© 2025 Mahboub Anvari</p>
+     <p>© 2025 Mahboub Anvari</p>
    </footer>
-
-
- 
+   
    <!-- fullPage.js library -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.31/fullpage.min.js"></script>
   
@@ -109,6 +94,7 @@
     // measure your fixed header’s height at runtime
     const headerHeight = document.getElementById('fixed-header').offsetHeight;
     new fullpage('#fullpage', {
+      licenseKey: 'gplv3',
       anchors: ['home', 'portfolio', 'about', 'contact'],
       menu:           '#fixed-header nav',
       fixedElements:  '#fixed-header',
