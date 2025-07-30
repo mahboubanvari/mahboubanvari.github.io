@@ -62,16 +62,25 @@
    <div id="recent-modal" class="collection-modal" aria-modal="true" role="dialog">
      <button class="close-modal">&times;</button>
      <div class="portfolio-grid">
-       <img src="images/recent1.jpg" alt="recent work 1">
-       <img src="images/recent2.jpg" alt="recent work 2">
+       <img src="images/recent1.jpg"
+         alt="untitled"
+         data-title="untitled"
+         data-size="24x30 in."
+         data-year="2024">
+       <img src="images/recent2.jpg"
+         alt="Where Light Grows"
+         data-title="Where Light Grows"
+         data-size="24x24 in."
+         data-year="2024"
+         data-medium="Acrylic on canvas">
      </div>
    </div>
    <div id="residential-modal" class="collection-modal" aria-modal="true" role="dialog">
      <button class="close-modal">&times;</button>
      <div class="portfolio-grid">
-       <img src="images/residential1.jpg" alt="residentioal complex 1">
-       <img src="images/residential2.jpg" alt="residentioal complex 2">
-       <img src="images/residential3.jpg" alt="residentioal complex 3">
+       <img src="images/residential1.jpg" alt="untitled">
+       <img src="images/residential2.jpg" alt="untitled">
+       <img src="images/residential3.jpg" alt="untitled">
        <img src="images/residential4.jpg" alt="residentioal complex 4">
        <img src="images/residential5.jpg" alt="residentioal complex 5">
        <img src="images/residential6.jpg" alt="residentioal complex 6">
@@ -124,12 +133,30 @@
    });
    // open image in lightbox
    document.querySelectorAll('.collection-modal .portfolio-grid img').forEach(img => {
-   img.addEventListener('click', e => {
-    e.stopPropagation();              // prevent modal click–close
-    document.getElementById('lightbox-img').src = img.src;
-    document.getElementById('lightbox-overlay').style.display = 'flex';
-    });
+     img.addEventListener('click', e => {
+       e.stopPropagation();
+       document.getElementById('lightbox-img').src = img.src;
+
+       // Grab info from data attributes
+       const title = img.getAttribute('data-title') || '';
+       const size = img.getAttribute('data-size') || '';
+       const year = img.getAttribute('data-year') || '';
+       const medium = img.getAttribute('data-medium') || '';
+       let captionHTML = '';
+       if (title) captionHTML += `<span class="art-title">${title}</span>`;
+       let details = [];
+       if (medium) details.push(medium);
+       if (size) details.push(size);
+       if (year) details.push(year);
+       if (details.length > 0) {
+         captionHTML += `<br><span class="art-details">${details.join(' &nbsp;|&nbsp; ')}</span>`;
+       }
+       document.getElementById('lightbox-caption').innerHTML = captionHTML;
+
+       document.getElementById('lightbox-overlay').style.display = 'flex';
+     });
    });
+
    // close handler for the close button
    function closeLightbox() {
    document.getElementById('lightbox-overlay').style.display = 'none';
@@ -140,8 +167,11 @@
 
    <!-- full-screen image lightbox -->
    <div id="lightbox-overlay" onclick="closeLightbox()">
-   <button class="lightbox-close">&times;</button>
-   <img id="lightbox-img" src="" alt="">
+     <button class="lightbox-close">&times;</button>
+     <div class="lightbox-img-wrapper">
+       <img id="lightbox-img" src="" alt="">
+       <div id="lightbox-caption"></div>
+     </div>
    </div>
 
   </body>
