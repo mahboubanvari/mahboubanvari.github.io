@@ -5,8 +5,8 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Mahboub Anvari</title>
    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.31/fullpage.min.css" />
+   <link rel="stylesheet" href="style.css">
  </head>
  <body>
    <header id="fixed-header">
@@ -14,6 +14,9 @@
        <h1 class="site-logo">
          <a href="#home">Mahboub&nbsp;Anvari</a>
        </h1>
+       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+         <span></span><span></span><span></span>
+       </button>
        <nav>
          <ul>
            <li><a href="#home" data-menuanchor="home">Home</a></li>
@@ -54,7 +57,7 @@
      <section id="section-contact" class="section contact-text" data-anchor="contact">
        <h2>Contact</h2>
        <br />
-       <p>I'd love to hear from you—whether it's about commissions, collaborations, exhibitions, or just to share your thoughts on my work.<p>
+       <p>I'd love to hear from you—whether it's about commissions, collaborations, exhibitions, or just to share your thoughts on my work.</p><br />
        <p>Email: <a href="mailto:mahboub.anvari.m@gmail.com">mahboub.anvari.m@gmail.com</a></p>
        <p>Instagram: <a href="https://www.instagram.com/mahboub.anvari/" target="_blank">@mahboub.anvari</a></p>
      </section>
@@ -115,9 +118,28 @@
     });
    });
    </script>
+   
+   <script>
+     const btn = document.querySelector('.hamburger');
+     btn.addEventListener('click', () => {
+       // toggle a class on body
+       document.body.classList.toggle('nav-open');
 
+       // update aria-expanded for accessibility
+       const expanded = btn.getAttribute('aria-expanded') === 'true';
+       btn.setAttribute('aria-expanded', String(!expanded));
+     });
 
+     // (optional) close on link click
+     document.querySelectorAll('#fixed-header nav a').forEach(link => {
+       link.addEventListener('click', () => {
+         document.body.classList.remove('nav-open');
+         btn.setAttribute('aria-expanded','false');
+       });
+     });
+   </script>
 
+   
    <script>
    // Open modals
    document.querySelectorAll('.collection-card').forEach(card => {
