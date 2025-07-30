@@ -380,7 +380,7 @@ main.fade-in-container {
     margin: 20px auto;
     width: 98vw;
   }
-.collection-modal {
+  .collection-modal {
     padding: 18px 4px 4px 4px;    /* Less top/right/bottom/left padding */
     padding-top: 60px;            /* Keep space for header if needed */
   }
@@ -390,7 +390,7 @@ main.fade-in-container {
     max-width: 98vw;
     margin-top: 8px;
   }
-}
+
   .header-inner {
     flex-direction: column;
     align-items: flex-start;
