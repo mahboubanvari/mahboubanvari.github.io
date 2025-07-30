@@ -475,13 +475,6 @@ main.fade-in-container {
   }
 }
 
-/* fullPage.js nav bullets: hide on small viewports */
-@media (max-width: 768px) {
-  .fp-nav {
-    display: none !important;
-  }
-}
-
 /* Prevent modal images from re-flowing or transforming */
 .collection-modal .portfolio-grid img {
   transition: none !important;
@@ -522,4 +515,11 @@ main.fade-in-container {
   height: auto;
   object-fit: contain;  /* Always shows the whole image, never crops */
   display: block;
+}
+
+/* fullPage.js nav bullets: hide on small viewports */
+@media (max-width: 768px) {
+  .fp-nav {
+    display: none !important;
+  }
 }
