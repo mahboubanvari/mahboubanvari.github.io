@@ -4,13 +4,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
-  color: #cad47f; /* lemon green */
   /* Base dark + semi-transparent lemon-green overlay */
-  background: 
-    linear-gradient(135deg, rgba(212, 209, 103, 0.25), rgba(156, 154, 82, 0.25)),
-    #1e1e1c; /* dark base color */
-
-  color: #cad47f; /* light text for contrast */
+  background: #f2f5d0 /* dark base color */
 }
 
 
@@ -19,10 +14,10 @@ body {
   position: fixed;
   top: 0; left: 0;
   width: 100%;
-  background: rgba(30,30,30,0.9);
+  background: #90927e;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  padding: 15px 0;
+  padding: 20px 20px;
   text-align: center;
 }
 /* flex container inside header */
@@ -30,13 +25,14 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  height: 60px;               /* match your previous header height */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap; /* allow nav to move below logo */
 }
 /* site title/logo style */
 .site-logo {
+  white-space: nowrap;
   margin: 0;
   font-size: 1.5rem;
   font-weight: bold;
@@ -49,6 +45,7 @@ body {
 #fixed-header nav ul {
   list-style: none;
   display: flex;
+  flex-shrink: 1;
   margin: 0;
   padding: 0;
 }
@@ -58,10 +55,10 @@ body {
 #fixed-header nav a {
   text-decoration: none;
   font-size: 1rem;
-  color: #596446;
+  color: #f2f5d0; /* home, portfolio, about, contact in the header */
 }
 #fixed-header nav a:hover {
-  color: #cad47f;
+  color: #cad47f; /* */
 }
 
 
@@ -70,14 +67,15 @@ header h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #596446;
+  color: #f2f5d0;
 }
 
-
-/* Main page text for About/Contact */
-.about-text p,
-.contact-text p {
-  color: #cad47f;
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; /* Or whatever looks good */
+  margin-bottom: 1em;
+  color: #90927e;
+  text-align: center;
 }
 
 
@@ -109,7 +107,7 @@ main {
 .portfolio-text {
  text-align: center;
   font-size: 1.2rem;
-  color: #596446;
+  color: #90927e;
   line-height: 1.6;
   max-width: 800px;
   margin: 60px auto; /* adds clear space above/below */
@@ -119,7 +117,7 @@ main {
 .about-text, .contact-text {
  text-align: center;
   font-size: 1.2rem;
-  color: #596446;
+  color: #90927e;
   line-height: 1.6;
   max-width: 800px;
   margin: 90px auto; /* adds clear space above/below */
@@ -224,10 +222,17 @@ main {
 
 /* Fade-in keyframes already in your CSS */
 .about-text p, .contact-text p {
-  color: #596446; /* softer light gray */
+  color: #90927e; /* softer light gray */
 }
+.about-text, .about-text a {
+  color: #333333;
+}
+.contact-text, .contact-text a {
+  color: #6a7a55;
+}
+
 .collection-title {
-  color: #596446;
+  color: #90927e;
 }
 
 .portfolio-grid img {
@@ -302,7 +307,8 @@ main.fade-in-container {
   /* allow internal scrolling */
   overflow-y: auto;
   padding: 40px;
-  z-index: 1000;
+  padding-top: 80px;  /* adjust based on actual header height */
+  z-index: 2001;
   /* stack content from the top */
   align-items: flex-start;
   justify-content: flex-start;
@@ -317,6 +323,7 @@ main.fade-in-container {
   font-size: 2.5rem;
   color: #fff;
   cursor: pointer;
+  z-index: 3000;  /* Make sure this is above the modal and header */
 }
 /* Masonry layout via CSS columns */
 .collection-modal .portfolio-grid {
@@ -325,12 +332,14 @@ main.fade-in-container {
   column-gap: 20px;                /* gutter between columns */
   width: 100%;
   max-width: 1200px;
-  margin-top: 20px;
+  margin-top: 40px;
   /* no overflow here — modal handles scrolling */
 }
 .collection-modal .portfolio-grid img {
   display: inline-block;           /* flow images into columns */
   width: 100%;
+  max-width: 100%;
+  height: auto;
   margin: 0 0 20px;                /* space below each image */
   break-inside: avoid;             /* keep each image intact */
 }
@@ -345,7 +354,7 @@ main.fade-in-container {
   background: rgba(0,0,0,0.9);
   justify-content: center;
   align-items: center;
-  z-index: 1100;
+  z-index: 3000;
   cursor: pointer;
 }
 #lightbox-overlay img {
@@ -360,15 +369,61 @@ main.fade-in-container {
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 4000;
 }
 
 
 @media (max-width: 600px) {
+  .portfolio-collections-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* smaller cards */
+    gap: 10px;
+    margin: 20px auto;
+    width: 98vw;
+  }
+.collection-modal {
+    padding: 18px 4px 4px 4px;    /* Less top/right/bottom/left padding */
+    padding-top: 60px;            /* Keep space for header if needed */
+  }
   .collection-modal .portfolio-grid {
-    column-width: 140px;   /* even smaller columns on phones */
-    column-gap: 12px;
+    column-width: 90px;
+    column-gap: 8px;
+    max-width: 98vw;
+    margin-top: 8px;
   }
 }
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;       /* <-- Allow height to adjust! */
+    padding: 10px 20px; /* Optional: adjust padding if you like */
+  }
+  .site-logo {
+    margin-bottom: 10px;
+  }
+  #fixed-header nav ul {
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 0;
+  }
+  #fixed-header nav li + li {
+    margin-left: 0;
+  }
+  #fixed-header {
+    padding: 10px 0;   /* Less padding looks nicer on mobile */
+    /* height: auto;   <-- Usually not needed, but you can add */
+  }
+  .portfolio-text,
+  .about-text,
+  .contact-text {
+    font-size: 1rem;     /* Smaller than desktop (was 1.2rem) */
+    padding: 10px;       /* Tighter padding on mobile */
+    max-width: 100vw;    /* Don't limit width on mobile */
+  }
+  h2 {
+    font-size: 1.2rem;   /* Make section headings smaller too */
+  }
+}
+
 
 
 /* Prevent modal images from re-flowing or transforming */
@@ -386,4 +441,29 @@ main.fade-in-container {
   width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* or height: 100vh if you want full page */
+}
+
+.hero-image {
+  width: 100vw;   /* Full viewport width */
+  height: 100vh;  /* Full viewport height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100vw;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;  /* Always shows the whole image, never crops */
+  display: block;
 }
