@@ -5,7 +5,7 @@ body {
   padding: 0;
   font-family: 'Lato', sans-serif;
   /* Base dark + semi-transparent lemon-green overlay */
-  background: #f2f5d0; /* dark base color */
+  background: #f2f2f0; /* dark base color */
 }
 
 
@@ -14,9 +14,8 @@ body {
   position: fixed;
   top: 0; left: 0;
   width: 100%;
-  background: #90927e;
+  background: #d8d8d5;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   padding: 20px 20px;
   text-align: center;
 }
@@ -39,7 +38,10 @@ body {
 }
 .site-logo a {
   text-decoration: none;
-  color: inherit;
+  color: #7b7e76;
+}
+.site-logo a:hover {
+  color: #31352a; /* */
 }
 /* nav list — horizontal, spaced out */
 #fixed-header nav ul {
@@ -55,10 +57,10 @@ body {
 #fixed-header nav a {
   text-decoration: none;
   font-size: 1rem;
-  color: #f2f5d0; /* home, portfolio, about, contact in the header */
+  color: #7b7e76; /* home, portfolio, about, contact in the header */
 }
 #fixed-header nav a:hover {
-  color: #cad47f; /* */
+  color: #31352a; /* */
 }
 
 
@@ -67,14 +69,14 @@ header h1 {
   font-family: 'Lato', serif;
   font-size: 3rem;
   margin-bottom: 10px;
-  color: #f2f5d0;
+  color: #fefff2;
 }
 
 header h2 {
   font-family: 'Lato', sans-serif;
   font-size: 2rem; /* Or whatever looks good */
   margin-bottom: 1em;
-  color: #90927e;
+  color: #7b7e76;
   text-align: center;
 }
 
@@ -112,7 +114,7 @@ main {
 .portfolio-text {
  text-align: center;
   font-size: 1.2rem;
-  color: #90927e;
+  color: #7b7e76;
   line-height: 1.6;
   max-width: 800px;
   margin: 60px auto; /* adds clear space above/below */
@@ -155,26 +157,13 @@ footer {
   flex-direction: column;
   justify-content: center;
   text-align: left;
-
-  /* Base dark + semi-transparent lemon-green overlay */
-  background: 
-    linear-gradient(135deg, rgba(212, 209, 103, 0.25), rgba(156, 154, 82, 0.25)),
-    #1e1e1c; /* dark base color */
-
-  color: #cad47f; /* light text for contrast */
 }
 
 .hero-text h1 {
   font-family: 'Lato', sans-serif;
   font-size: 3rem;
   margin-bottom: 20px;
-  color: #cad47f;
-}
-
-.hero-text p {
-  font-size: 1.4rem;
-  margin-bottom: 30px;
-  color: #cad47f;
+  color: #fefff2;
 }
 
 
@@ -215,23 +204,23 @@ main {
 }
 
 .portfolio-text, .portfolio-text a {
-  color: #6a7a55;
+  color: #8f9388;
 }
 /* Fade-in keyframes already in your CSS */
 .about-text p, .contact-text p {
-  color: #90927e; /* softer light gray */
+  color: #8f9388; /* softer light gray */
 }
 .about-text, .about-text a {
-  color: #6a7a55;
+  color: #8f9388;
 }
 .resume-text, .resume-text a {
-  color: #6a7a55;
+  color: #8f9388;
 }
 .contact-text, .contact-text a {
-  color: #6a7a55;
+  color: #8f9388;
 }
 .collection-title {
-  color: #90927e;
+  color: #8f9388;
 }
 
 .portfolio-grid img {
@@ -248,13 +237,9 @@ main {
 nav a {
   margin: 0 12px;
   text-decoration: none;
-  color: #f5f5f5; /* light by default */
+  color: #31352a; /* light by default */
   font-size: 1rem;
   transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #c8b560; /* warm yellow hover everywhere */
 }
 
 
@@ -490,10 +475,10 @@ main.fade-in-container {
   z-index: 1100;            /* above your nav drawer */
 }
 .hamburger span {
-  display: block;
+  display: flex;
   width: 100%;              /* fill the 28px width */
   height: 3px;
-  background: #f2f5d0;
+  background: #f2f2f0;
   border-radius: 2px;
   transition: background-color 0.2s ease;
 }
@@ -518,7 +503,7 @@ main.fade-in-container {
     position: absolute;
     top: 100%;         /* just below header */
     right: 0;
-    background: #90927e;
+    background: #d8d8d5;
     width: 200px;
     transform: translateX(100%);
     transition: transform 0.3s ease;
@@ -620,11 +605,10 @@ main.fade-in-container {
   display: block;
   width: 100%;              /* fill the 28px width */
   height: 3px;              /* bar thickness */
-  background-color: #f2f5d0;/* light color that contrasts your header (#90927e) */
+  background-color: #7b7e76;/* light color that contrasts your header (#90927e) */
   border-radius: 2px;
   transition: background-color 0.2s ease;
 }
-
 /* show hamburger & hide normal nav on small screens */
 @media (max-width: 768px) {
   /* show hamburger */
@@ -646,7 +630,7 @@ main.fade-in-container {
   text-align: center;
   max-width: 800px;
   margin: 80px auto;
-  color: #596446;
+  color: #7b7e76;
   padding: 20px;
 }
 
@@ -654,17 +638,17 @@ main.fade-in-container {
 .resume-header {
   text-align: center;
   margin-bottom: 2rem;
-  color: #596446;
+  color: #828b75;
 }
 .resume-header h2 {
   font-size: 2.5rem;
   margin-bottom: 0.2em;
-  color: #596446;
+  color: #828b75;
 }
 .resume-header p {
   font-size: 1rem;
   margin-bottom: 0.5em;
-  color: #596446;
+  color: #828b75;
 }
 
 /* Social badges row */
@@ -674,19 +658,19 @@ main.fade-in-container {
 }
 .icon-link {
   font-size: 1.5rem;
-  color: #596446;
+  color: #828879;        /* ← new base color */
   transition: color 0.2s;
 }
-.icon-link:hover {
-  color: #90927e;
+.icon-link:hover,
+.icon-link:focus {
+  color: #31352a;
 }
-
 /* Content headings/lists */
 .resume-content h4 {
   font-size: 1rem;
   margin-top: 1rem;
   margin-bottom: 0.5em;
-  color: #596446;
+  color: #828879;
 }
 .resume-content ul {
   list-style: none;
@@ -702,7 +686,7 @@ main.fade-in-container {
 
 /* 1) Make all main section headings (h2) the same green */
 .section h2 {
-  color: #6a7a55;   /* matches your About/Contact headings */
+  color: #828879;   /* matches your About/Contact headings */
 }
 
 /* 2) Ensure Portfolio body text stays grey, not green */
@@ -718,7 +702,7 @@ main.fade-in-container {
 /* 4) Style Resume’s main heading (h2) and sub-headings (h4) */
 .resume-text h2,
 .resume-text h4 {
-  color: #6a7a55;   /* same green as other section titles */
+  color: #828b75;   /* same green as other section titles */
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
@@ -731,7 +715,7 @@ main.fade-in-container {
 /* 6) Style the detail copy (location, education items, list items) */
 .resume-text p,
 .resume-content li {
-  color: #90927e;     /* same light gray as About/Contact copy */
+  color: #8f9388;     /* same light gray as About/Contact copy */
   font-size: 1rem;    /* smaller than your 1.2rem body size */
   line-height: 1.5;
 }
@@ -751,4 +735,12 @@ main.fade-in-container {
   height: 0;
   background: transparent;
 }
-
+/* at the very end of style.css */
+.social-badges .icon-link svg,
+.social-badges .icon-link svg path {
+  fill: #828879 !important;
+}
+.social-badges .icon-link:hover svg,
+.social-badges .icon-link:hover svg path {
+  fill: #31352a !important;
+}
