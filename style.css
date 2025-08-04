@@ -246,10 +246,11 @@ main.fade-in-container {
 
 /* — Collection‐cards grid on Portfolio */
 .portfolio-collections-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  display: grid !important;
+  grid-template-columns: repeat(2, 240px);
+  justify-content: center;  /* center the 480px-wide grid */
   gap: 20px;
-  width: 30%;
+  width: auto;
   margin: 40px auto;
 }
 .collection-card {
@@ -754,3 +755,4 @@ main.fade-in-container {
     padding-right: 35px;
   }
 }
+
