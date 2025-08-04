@@ -430,6 +430,8 @@ main.fade-in-container {
   padding: 10px 0;
   font-family: 'Lato', sans-serif;
   font-size: 0.6rem;
+  }
+
   .header-inner {
   display: flex;               
   flex-direction: row;         /* keep logo and hamburger side by side */
