@@ -389,10 +389,13 @@ main.fade-in-container {
 }
 
 #lightbox-caption .art-details {
+  display: block;        /* ensures it’s on its own line */
   font-weight: normal;
   color: #888;
   font-size: 0.96em;
+  margin-bottom: 2em;    /* roughly two empty lines, adjust if needed */
 }
+
 
 
 @media (max-width: 600px) {
