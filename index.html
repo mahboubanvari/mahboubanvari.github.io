@@ -212,6 +212,7 @@
    document.addEventListener('DOMContentLoaded', () => {
     // measure your fixed header’s height at runtime
     const headerHeight = document.getElementById('fixed-header').offsetHeight;
+    document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
     new fullpage('#fullpage', {
       licenseKey: 'gplv3',
       anchors: ['home', 'portfolio', 'about', 'resume' , 'contact'],
