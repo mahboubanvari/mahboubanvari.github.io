@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Mahboub Anvari | Painter & Visual Artist</title>
    <meta name="description" content="Mahboub Anvari — painter capturing the quiet poetry of everyday spaces. Portfolio of acrylic and oil paintings." />
    <meta name="robots" content="index, follow" />
@@ -212,7 +212,6 @@
    document.addEventListener('DOMContentLoaded', () => {
     // measure your fixed header’s height at runtime
     const headerHeight = document.getElementById('fixed-header').offsetHeight;
-    document.documentElement.style.setProperty('--header-h', headerHeight + 'px');
     new fullpage('#fullpage', {
       licenseKey: 'gplv3',
       anchors: ['home', 'portfolio', 'about', 'resume' , 'contact'],
