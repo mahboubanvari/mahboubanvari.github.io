@@ -400,6 +400,7 @@ main.fade-in-container {
 @media (max-width: 600px) {
   #lightbox-img {
     max-height: calc(85vh - 60px);
+    padding-top: 55px;
   }
   #lightbox-overlay img {
     max-width: 90%;
