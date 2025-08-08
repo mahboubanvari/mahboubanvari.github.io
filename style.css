@@ -281,11 +281,12 @@ main.fade-in-container {
 .collection-modal {
   display: none;
   position: fixed;
-  inset: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0,0,0,0.9);
   /* allow internal scrolling */
   overflow-y: auto;
-  padding: 0px;
+  padding: 40px;
+  padding-top: 80px;  /* adjust based on actual header height */
   z-index: 2001;
   /* stack content from the top */
   align-items: flex-start;
@@ -319,7 +320,6 @@ main.fade-in-container {
   max-width: 100%;
   height: auto;
   margin: 0 0 20px;                /* space below each image */
-  margin-top: var(--header-height, 70px);
   break-inside: avoid;             /* keep each image intact */
 }
 
