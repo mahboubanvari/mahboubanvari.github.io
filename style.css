@@ -406,13 +406,12 @@ main.fade-in-container {
     padding-top: 5px;
     max-width: 94vw;
   }
-  
   #lightbox-caption .art-details {
     display: block;        /* ensures it’s on its own line */
     font-weight: normal;
     color: #888;
     font-size: 0.96em;
-    margin-bottom: 2em;    /* roughly two empty lines, adjust if needed */
+    margin-bottom: 6em;    /* roughly two empty lines, adjust if needed */
   }
   .portfolio-collections-grid {
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* smaller cards */
