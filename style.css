@@ -399,7 +399,11 @@ main.fade-in-container {
 
 @media (max-width: 600px) {
   #lightbox-img {
-    max-height: calc(85vh - 60px);
+    max-height: calc(75vh - 60px);
+  }
+    /* For very tall images (portrait orientation), reduce even more */
+  #lightbox-img[style*="height"] {
+    max-height: calc(70vh - 60px);
   }
   #lightbox-caption {
     font-size: 0.93em;
