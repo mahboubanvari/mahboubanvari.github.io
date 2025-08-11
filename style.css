@@ -178,7 +178,7 @@ footer {
   }
 }
 /* Fade-in for all page content */
-main, #fixed-header nav ul, .about-text, .resume-content .contact-text, .portfolio-grid, .lightbox-img-wrapper, h1, h2, h3, h4 {
+main, #fixed-header nav ul, .about-text, .resume-content .contact-text, .portfolio-grid, .portfolio-collections-grid, .lightbox-img-wrapper, h1, h2, h3, h4 {
   opacity: 0;
   animation: fadeInUp 1.2s ease-out forwards;
 }
