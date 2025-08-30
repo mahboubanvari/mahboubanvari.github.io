@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
    <title>Mahboub Anvari | Painter & Visual Artist</title>
    <meta name="description" content="Mahboub Anvari — painter capturing the quiet poetry of everyday spaces. Portfolio of acrylic and oil paintings." />
    <meta name="robots" content="index, follow" />
@@ -43,13 +43,17 @@
            <img src="images/residential1.jpg" alt="Residential Complex Cover">
            <div class="overlay"><h3>Residential Complex</h3></div>
          </div>
+         <div class="collection-card" data-target="past-modal">
+           <img src="images/past1.jpg" alt="past works Cover">
+           <div class="overlay"><h3>past works</h3></div>
+         </div>
        </div>
      </section>
      <section id="section-about" class="section about-text" data-anchor="about">
        <h2>About</h2>
        <br />
        <p>My work focuses on the subtle poetry of ordinary life, capturing fleeting moments and quiet spaces that hold traces of memory, transition, and belonging. I explore the relationship between people and the spaces they inhabit, and how these spaces can carry identity, presence, and absence all at once.<br /><br />
-       Relocation and adaptation have deeply shaped my perspective. Moving from Iran to the United States in 2023, brought a new awareness of how environments define us—routines change, and spaces gradually become extensions of memory. Through this shift, I became aware of how new and unfamiliar places slowly gather their own sense of familiarity with time.<br /><br />
+       Relocation and adaptation have deeply shaped my perspective. Moving from Iran to the United States two years ago, brought a new awareness of how environments define us—routines change, and spaces gradually become extensions of memory. Through this shift, I became aware of how new and unfamiliar places slowly gather their own sense of familiarity with time.<br /><br />
        While my paintings are rooted in personal experience, I approach them openly, hoping that others might see or feel something of their own within the work.</p>
      </section>
      <section id="section-resume" class="section resume-text" data-anchor="resume">
@@ -110,96 +114,115 @@
      <button class="close-modal">&times;</button>
      <div class="portfolio-grid">
        <img src="images/recent1.jpg"
-         alt="Light vs. Shadow"
-         data-title="Light vs. Shadow"
+         alt="Light Vs. Shadow"
+         data-title="Light Vs. Shadow"
          data-size="24x30 in , 60x76 cm"
          data-year="2024"
          data-medium="Acrylic on canvas"
-       >
+        >
        <img src="images/recent2.jpg"
          alt="Where Light Grows"
          data-title="Where Light Grows"
          data-size="24x24 in , 60x60 cm"
          data-year="2024"
          data-medium="Acrylic on canvas"
-       >
+        >
      </div>
    </div>
    <div id="residential-modal" class="collection-modal" aria-modal="true" role="dialog">
      <button class="close-modal">&times;</button>
      <div class="portfolio-grid">
        <img src="images/residential1.jpg"
-         alt="Untitled"
-         data-title="Untitled"
+         alt="residential complex 1"
+         data-title="untitled"
          data-size="40x40 in."
          data-year="2023"
          data-medium="Acrylic on canvas"
-       >
+        >
        <img src="images/residential2.jpg"
          alt="Silent Arrangement"
          data-title="Silent Arrangement"
          data-size="20x40 in."
          data-year="2023"
          data-medium="Acrylic on canvas"
-       >
+        >
        <img src="images/residential3.jpg"
          alt="The Blue-Lit Unit"
          data-title="The Blue-Lit Unit"
          data-size="20x40 in."
          data-year="2023"
          data-medium="Acrylic on canvas"
-       >
+        >
        <img src="images/residential4.jpg"
          alt="Caught by the Mirror"
          data-title="Caught by the Mirror"
          data-size="20x40 in."
          data-year="2023"
          data-medium="Acrylic on canvas"
-       >
+        >
        <img src="images/residential5.jpg"
          alt="My Feathered Companion"
          data-title="My Feathered Companion"
          data-size="20x40 in."
          data-year="2023"
          data-medium="Acrylic on canvas"
-       >
+        >
       <img src="images/residential6.jpg"
          alt="Ahh, Fresh Air"
          data-title="Ahh, Fresh Air"
          data-size="20x40 in."
          data-year="2023"
          data-medium="Acrylic on canvas"
-      >
+        >
        <img src="images/residential7.jpg"
          alt="Awaiting the Journey"
          data-title="Awaiting the Journey"
          data-size="20x40 in."
          data-year="2023"
          data-medium="Acrylic on canvas"
-       >
+        >
        <img src="images/residential8.jpg"
          alt="Untitled"
          data-title="Untitled"
          data-size="40x20 in."
          data-year="2023"
          data-medium="Acrylic on canvas"
-       >
+        >
        <img src="images/residential9.jpg"
          alt="Tonbak Rhythms"
          data-title="Tonbak Rhythms"
          data-size="40x20 in."
          data-year="2023"
          data-medium="Acrylic on canvas"
-       >
+        >
        <img src="images/residential10.jpg"
          alt="Dormant Thread"
          data-title="Dormant Thread"
          data-size="40x20 in."
          data-year="2023"
          data-medium="Acrylic on canvas"
-       >
+        >
      </div>
    </div>  
+   <div id="past-modal" class="collection-modal" aria-modal="true" role="dialog">
+     <button class="close-modal">&times;</button>
+     <div class="portfolio-grid">
+       <img src="images/past1.jpg"
+         alt="self portrait"
+         data-title="self portrait"
+         data-size="3x5 in , 8x12 cm"
+         data-year="2021"
+         data-medium="oil paint on paper"
+        >
+       <img src="images/past2.jpg"
+         alt="Where Light Grows"
+         data-title="Where Light Grows"
+         data-size="24x24 in , 60x60 cm"
+         data-year="2024"
+         data-medium="Acrylic on canvas"
+        >
+     </div>
+   </div>
    <footer>
      <p>© 2025 Mahboub Anvari</p>
    </footer>
@@ -292,8 +315,6 @@
    }
 
    </script>
-
-
    <!-- full-screen image lightbox -->
    <div id="lightbox-overlay" onclick="closeLightbox()">
      <button class="lightbox-close">&times;</button>
