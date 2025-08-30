@@ -247,7 +247,7 @@ main.fade-in-container {
 /* — Collection‐cards grid on Portfolio */
 .portfolio-collections-grid {
   display: grid !important;
-  grid-template-columns: repeat(2, 240px);
+  grid-template-columns: repeat(3, 240px);
   justify-content: center;  /* center the 480px-wide grid */
   gap: 20px;
   width: auto;
@@ -413,10 +413,10 @@ main.fade-in-container {
     max-width: 94vw;
   }
   .portfolio-collections-grid {
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* smaller cards */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* smaller cards */
     gap: 10px;
     margin: 20px auto;
-    width: 70vw;
+    width: 75vw;
   }
  .collection-modal {
     padding: 18px 10px 10px 10px;    /* Less top/right/bottom/left padding */
