@@ -247,10 +247,9 @@ main.fade-in-container {
 /* — Collection‐cards grid on Portfolio */
 .portfolio-collections-grid {
   display: grid !important;
-  grid-template-columns: repeat(3, 240px);
+  grid-template-columns: repeat(2, 250px);
   justify-content: center;  /* center the 480px-wide grid */
   gap: 20px;
-  width: auto;
   margin: 40px auto;
 }
 .collection-card {
@@ -717,7 +716,6 @@ main.fade-in-container {
   height: 0;
   background: transparent;
 }
-/* at the very end of style.css */
 .social-badges .icon-link svg,
 .social-badges .icon-link svg path {
   fill: #828879 !important;
@@ -730,8 +728,8 @@ main.fade-in-container {
 /* give all full-screen sections a little side-padding */
 .section {
   padding: 50px 10px;
-  padding-left: 35px;
-  padding-right: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* tighten up on very small screens if you need */
